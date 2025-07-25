@@ -1,0 +1,18 @@
+<div class="calendar-row">
+  @if (this.type === 'month') {
+    <div class="calendar-column name month sticky">
+      {{ this.monthLabel }}
+    </div>
+  }
+
+  @for (yes of this.fakeArray; track day; let day = $index) {
+    <app-calendar-cell
+      [day]="day"
+      [month]="month"
+      [year]="year"
+    ></app-calendar-cell>
+  }
+  @for (yes of this.missingFakeArray; track day; let day = $index) {
+    <div class="calendar-column border-2 border-black bg-black"></div>
+  }
+</div>

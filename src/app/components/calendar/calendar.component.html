@@ -1,0 +1,17 @@
+<div class="calendar">
+    <app-calendar-header
+        [date]="this.date"
+        [year]="this.type === 'year'"
+    ></app-calendar-header>
+    @switch (this.type) {
+        @case ('year') {
+            @for (yes of fakeArray; track yes; let month = $index) {
+                <app-calendar-row
+                    [month]="month"
+                    type="month"
+                    [year]="this.date.getFullYear()"
+                ></app-calendar-row>
+            }
+        }
+    }
+</div>

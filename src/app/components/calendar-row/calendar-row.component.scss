@@ -1,0 +1,44 @@
+.calendar-row {
+    display: flex;
+    align-items: center;
+}
+
+.calendar-column {
+    position: relative;
+    height: 25px;
+
+    overflow: hidden;
+    flex: 0 0 25px;
+
+    @apply text-center;
+
+    &.sticky {
+        position: sticky;
+        left: 0;
+        background-color: white;
+        z-index: 100;
+    }
+
+    &.name {
+        flex-basis: 300px;
+        @apply truncate px-4 text-right;
+
+        &.month {
+            flex-basis: 110px;
+        }
+    }
+
+    &:nth-child(1) {
+        margin: 0 0 0 auto;
+    }
+
+    &:nth-last-child(1) {
+        margin: 0 auto 0 0;
+    }
+}
+
+app-calendar-cell {
+    &:nth-last-child(1) {
+        margin: 0 auto 0 0;
+    }
+}

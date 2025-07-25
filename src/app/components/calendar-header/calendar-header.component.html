@@ -1,0 +1,26 @@
+@if (this.date) {
+    <div class="calendar-row">
+        @if (!year) {
+            <div class="calendar-column name sticky">Collaborateur</div>
+        }
+        @if (year) {
+            <div class="calendar-column name month sticky">Mois</div>
+        }
+        @for (
+            yes of this.daysUtils.getNthArray(
+                this.year
+                    ? 31
+                    : this.daysUtils.getDayAmount(
+                          this.date.getFullYear(),
+                          this.date.getMonth()
+                      )
+            );
+            track i;
+            let i = $index
+        ) {
+            <div class="calendar-column">
+                {{ i + 1 }}
+            </div>
+        }
+    </div>
+}

@@ -3,31 +3,37 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@spartan-ng/ui-spinner-helm": [
+        "./src/ui/ui-spinner-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-sonner-helm": [
+        "./src/ui/ui-sonner-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-icon-helm": ["./src/ui/ui-icon-helm/src/index.ts"],
+      "@spartan-ng/ui-tooltip-helm": [
+        "./src/ui/ui-tooltip-helm/src/index.ts"
+      ]
+    }
   },
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "enableIvy": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }
